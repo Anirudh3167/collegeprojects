@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void f(float x) {
+float f(float x) {
      //Let us assume the equation as x*x*x + x - 1.
      return x*x*x + x - 1;
 }
@@ -10,8 +10,8 @@ int main() {
      float a;float b;float x;int iter=0;
      cout << "Lower limit:"; cin >> a;
      cout << "Upper limit:"; cin >> b;
-     (f(a)==0)? cout << "root is:"+to_string(a):"";
-     (f(b)==0)? cout << "root is:"+to_string(b):"";
+     cout << ((f(a)==0)?"root is:"+to_string(a):"");
+     cout << ((f(b)==0)?"root is:"+to_string(b):"");
      if ((f(a)!=0)&&(f(b)!=0)) {
            cout << "iteration limit:"; cin >> iter;
      }
@@ -21,3 +21,4 @@ int main() {
            i=((f(x)>0)&&(f(x)<0.0001)? iter:i);
      }
      cout << "The nearest root is:" << x;
+}
