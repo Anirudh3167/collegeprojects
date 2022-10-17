@@ -1,17 +1,15 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 float f(float x) {
-    x*x*x + x - 1
-    return eq;
+   return x*x*x + x - 1;
 }
 
 int SECANT(float x1,float x0,int iter) {
     float x;
     for (int i = 0;i<iter;i++) {
     x = x1 - ((x1 - x0)/(f(x1)-f(x0)));
-    f(x,0) < 0? x0 = x : x1 = x; 
+    f(x) < 0? x0 = x : x1 = x; 
     i = ((f(x) <= 0.0001)&&(f(x) >= 0)?iter:i);
     }
     cout << "\n\tx = " << x << "\n";
@@ -20,7 +18,7 @@ int SECANT(float x1,float x0,int iter) {
 
 int main()
 {   
-    float x1; float x0;
+    float x1; float x0; int iter;
     cout << "lower limit :";
     cin >> x0;
     cout << "upper limit :";
