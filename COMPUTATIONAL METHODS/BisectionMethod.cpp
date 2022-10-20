@@ -25,7 +25,7 @@ int main() {
            x = (a+b)/2;
            cout << to_string(i+1)+"\t\t"+to_string(a)+"\t"+to_string(b)+"\t"+to_string(x)+"\t"+to_string(f(x))+"\n";
            (f(x)<0)? a=x:b=x;
-           i=((f(x)>0)&&(f(x)<0.0001)? iter:i);
+           i=((f(x)>=0.0001)&&(f(x)<=0.0001)? iter:i);
      }
      cout << "\nThe nearest root is:" << x;
 }
