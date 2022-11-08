@@ -1,17 +1,21 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
 vector<float> split(string str) {
     string str1;
     vector<float> vect;
+    string search;
     for (int i=0; i < str.length(); i++ ) {
         if (str[i] != ' ') {
             str1 = str1 + str[i];
         }
         else {
-            vect.push_back(stof(str1));
+            if (str1 != "") {
+                vect.push_back(stof(str1));
+            }
             str1 = "";
         }
     }
@@ -25,10 +29,10 @@ int main()
     vector<float> vect1,vect2;
     int val;
     cout << "Use space to seperate\n";
-    cout << "X: ";
+    cout << "X:\t";
     getline(cin,abc);
     vect1 = split(abc);
-    cout << "F(x): ";
+    cout << "F(x):\t";
     getline(cin,abc);
     vect2 = split(abc);
     cout << "value of X:";
