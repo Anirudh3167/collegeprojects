@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
 
@@ -9,13 +8,12 @@ vector<float> split(string str) {
     vector<float> vect;
     string search;
     for (int i=0; i < str.length(); i++ ) {
-        if (str[i] != ' ') {
+        search = str[i]
+        if (search != "\t") {
             str1 = str1 + str[i];
         }
         else {
-            if (str1 != "") {
-                vect.push_back(stof(str1));
-            }
+            vect.push_back(stof(str1));
             str1 = "";
         }
     }
