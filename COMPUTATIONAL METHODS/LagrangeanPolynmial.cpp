@@ -8,7 +8,7 @@ vector<float> split(string str) {
     vector<float> vect;
     string search;
     for (int i=0; i < str.length(); i++ ) {
-        search = str[i]
+        search = str[i];
         if (search != "\t") {
             str1 = str1 + str[i];
         }
@@ -26,7 +26,7 @@ int main()
     string abc;
     vector<float> vect1,vect2;
     int val;
-    cout << "Use space to seperate\n";
+    cout << "Use tab to seperate\n";
     cout << "X:\t";
     getline(cin,abc);
     vect1 = split(abc);
