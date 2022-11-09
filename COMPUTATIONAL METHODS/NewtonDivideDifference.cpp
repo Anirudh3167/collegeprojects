@@ -1,3 +1,11 @@
+/*    for newtons divide differnce,
+    the logic is to split the table of divide differnce
+    then an array will contain its elements.
+    table_length will describe about elements in the column.
+    
+    The first values in every array made such is the required ones.
+    stored it in a vector then performed the divide difference polynomials.
+*/
 #include <iostream>
 #include <vector>
 
@@ -38,7 +46,6 @@ int main()
     float arr[vect2.size()];
     for (int i = 0; i<vect2.size(); i++) {
         arr[i] = vect2[i];
-        //cout << "arr[i]:" << arr[i] << endl;
     }
     float new_arr[vect2.size()];
     vector<float> dd;
@@ -57,9 +64,9 @@ int main()
         table_length = table_length - 1;
         real_index = real_index + 1;
     }
-    float sum = 0, prod = 1;
+    float sum = vect2[0], prod = 1;
     
-    for (int i=0; i < table_length; i++) {
+    for (int i=0; i < vect1.size(); i++) {
         for (int j=0; j < i+1; j++) {
             prod = prod*(val - vect1[j]);
             
