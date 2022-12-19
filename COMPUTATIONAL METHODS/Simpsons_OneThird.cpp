@@ -47,5 +47,6 @@ int main()
         }
     }
     val = h*(sum1 + 2*even_sum + 4*sum)/3;
+    cout << "Ans:" << val;
     return 0;
 }
