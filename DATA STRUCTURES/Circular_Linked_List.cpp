@@ -1,6 +1,3 @@
-//This is not a correct code.
-//Needs to be contructed and verified.
-
 
 #include <iostream>
 
@@ -27,18 +24,17 @@ void BeginInsert(struct Node *p,int data) {
     }
     else {
         t = new Node;
-        r = p;
-        //finding the end node (NULL for the first time)
-        while(r->next != first) {
-            if (r->next != NULL) {
-                break;
-            }
-            r=r->next;
-        }
         t->data = data;
         t->next = p;
+        //finding the end node (NULL for the first time)
+        while(p->next != first) {
+            if (p->next == NULL) {
+                break;
+            }
+            p=p->next;
+        }
         //linking the end node with the first node
-        r->next = t;
+        p->next = t;
         first = t;
     }    
 }
@@ -77,33 +73,33 @@ void EndInsert(struct Node *p,int data) {
     else {
         t = new Node;
         t->data = data;
-        t->next = p;
+        t->next = first;
         while (p->next != first) {
             p = p->next;    
         }
         p->next = t;
-
     }
 }
 
 //Deletion at begining
 void BeginDelete(struct Node *p) {
-    struct Node *t,*r;
+    struct Node *t;
     if (first == NULL) {
         cout << "NO NODE PRESENT";
     }
     else {
-        t = p;
-        p = p->next;
-        delete t;
-        first = p;
-        r = p;
-        //finding the end node
-        while(r->next != first) {
-            r=r->next;
+        // pointing the last noe
+        while(p->next != first) {
+            p=p->next;
         }
-        //linking last node with the first node
-        r->next=p;
+        // t will point to first node
+        t = p->next;
+        // assigning second node to last node
+        p->next = (p->next)->next;
+        delete t;
+        first = p->next;
+        //finding the end node
+        //linking last node with the first node.
     }
 }
 
@@ -145,6 +141,10 @@ void display(struct Node *p) {
     while (p!=NULL) {
         cout << p->data << " ";
         p = p->next;
+        if (p->next == first) {
+            cout << p->data << " ";
+            break;
+        }
     }
 }
 
