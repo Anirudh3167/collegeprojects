@@ -2,8 +2,8 @@
 using namespace std;
 
 //Prints the Augummented Matrix.
-void AugumentedMatrix(float arr[3][4]) {
-    cout << "\n\nAugumented Matrix:-\n";
+void AugumentedMatrix(string txt,float arr[3][4]) {
+    cout << "\n\n" << txt << ":-\n";
     cout << " _                 _\n";
     // cout << "|                   |\n";
     cout << "|" << arr[0][0] << "\t" << arr[0][1] << "\t" << arr[0][2] << "\t|\t" << arr[0][3] << "\t|\n";
@@ -34,7 +34,7 @@ int main() {
     cout << "Eq3 (interpreted as): " << arr[2][0] << "X + " << arr[2][1] << "Y + " << arr[2][2] << "Z + ";
     cout << arr[2][3] << " = 0 ";
     
-    AugumentedMatrix(arr);
+    AugumentedMatrix("Augumented Matrix",arr);
     
     /* Approach:-
     1. Take a window slider ( which slides through columns)
@@ -48,7 +48,6 @@ int main() {
         for (int j = 0; j < 3; j++) {
             //selecting second to last elements
             if ( j > i) {
-                cout << "Working on i:" << i <<"\n";
                 //Multiplier.(neagtive with adder by default)
                 /* aR1 + bR2 = 0
                 => R2 = -aR1/b
@@ -56,16 +55,54 @@ int main() {
                      R2---> Row 2
                 => R2 -> R2 + (-b/a)R1 */
                 float Multiplier = -arr[j][i]/arr[i][i];
-                cout << "Multiplier:" << Multiplier << "\n";
                 //Row operation
-                for (int k = 0; k < 3; k++) {
-                    cout << "Opertaing at :" << k << "\n";
+                for (int k = 0; k < 4; k++) {;
                     arr[j][k] = arr[j][k] + Multiplier*arr[i][k];
-                    cout << "New arr[j][k]:" << arr[j][k] << "\n";
                 }
             }
         }
     }
-    AugumentedMatrix(arr);
+    //Guass Elimination
+    AugumentedMatrix("Guass Elimination",arr);
+    /* For Guass Jordan,
+    Repeat the same with slider by considering the above elements.
+    */
+
+    // Window slider
+    for ( int i = 0; i < 3; i++) {
+        //operator on particular window.
+        for (int j = 0; j < 3; j++) {
+            //selecting second to last elements
+            if ( j < i) {
+                //Multiplier.(neagtive with adder by default)
+                /* aR1 + bR2 = 0
+                => R2 = -aR1/b
+                i.e. R1---> Row 1
+                     R2---> Row 2
+                => R2 -> R2 + (-b/a)R1 */
+                float Multiplier = -arr[j][i]/arr[i][i];
+                //Row operation
+                for (int k = 0; k < 4; k++) {
+                    arr[j][k] = arr[j][k] + Multiplier*arr[i][k];
+                }
+            }
+        }
+    }
+    
+    //Making Identity Matrix
+    // Window slider
+    for ( int i = 0; i < 3; i++) {
+        float Divider = arr[i][i];
+        arr[i][i] = 1;
+        arr[i][3] = arr[i][3]/Divider;
+    }
+    
+    //Guass Jordan
+    AugumentedMatrix("Guass Jordan",arr);
+    
+    cout << "\n===============Ans=============\n";
+    cout << "X:"<< arr[0][3] << "\n";
+    cout << "Y:"<< arr[1][3] << "\n";
+    cout << "Z:"<< arr[2][3] << "\n";
     return 0;
 }
