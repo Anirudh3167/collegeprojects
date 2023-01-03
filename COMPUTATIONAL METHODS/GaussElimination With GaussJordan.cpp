@@ -65,7 +65,7 @@ int main() {
         }
     }
     //Guass Elimination
-    //AugumentedMatrix("Guass Elimination",arr);
+    AugumentedMatrix("Guass Elimination",arr);
     /* For Guass Jordan,
     Repeat the same with slider by considering the above elements.
     */
