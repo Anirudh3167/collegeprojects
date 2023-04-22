@@ -59,7 +59,7 @@
 	| AMOUNT | decimal(8,2) | YES  |     | NULL    |       |
 	+--------+--------------+------+-----+---------+-------+
 
-## ALTER COMMANDS
+## Alter Commands
 #### COMMAND:-
 	ALTER TABLE CUSTOMERS ADD Rating int(5);
 #### OUTPUT:-
@@ -81,7 +81,7 @@
 	| CITY  | varchar(20) | YES  |     | NULL    |       |
 	+-------+-------------+------+-----+---------+-------+
 
-## DROP COMMANDS
+## Drop Commands
 #### COMMAND:-
 	CREATE TABLE DUMMY(
 	    -> DNAME int,
@@ -99,7 +99,7 @@
 #### OUTPUT:-
 	ERROR 1146 (42S02): Table 'Student.DUMMY' doesn't exist
 
-## TRUNCATE COMMANDS
+## Truncate Commands
 #### COMMAND:-
 	SELECT * FROM DUMMY;
 #### OUTPUT:-
