@@ -8,7 +8,8 @@
 
 ### Create Commands
 #### QUERY:-
-	A DDL command  to create a table DEPOSIT with ACTNO <varchar>, CNAME <varchar>, BNAME <varchar>, AMOUNT <decimal>, ADATE <date>
+	
+ `A DDL command  to create a table DEPOSIT with ACTNO <varchar>, CNAME <varchar>, BNAME <varchar>, AMOUNT <decimal>, ADATE <date>`
 #### COMMAND:-
 	create table DEPOSIT(
 	    -> ACTNO VARCHAR(10),
@@ -27,6 +28,8 @@
 	| ADATE  | date         | YES  |     | NULL    |       |
 	+--------+--------------+------+-----+---------+-------+
 
+<div style="page-break-after: always;"></div>
+
 #### QUERY:-
 	A DDL command  to create a table BRANCH with BNAME <varchar>, CITY <varchar>
 #### COMMAND:-
@@ -42,7 +45,8 @@
 	+-------+-------------+------+-----+---------+-------+
 
 #### QUERY:-
-	A DDL command  to create a table CUSTOMERS with CNAME <varchar>, CITY <varchar>	
+	A DDL command  to create a table CUSTOMERS with CNAME <varchar>, CITY <varchar>
+    </div>
 #### COMMAND:-
 	create table CUSTOMERS(
 	    -> CNAME VARCHAR(20),
@@ -55,8 +59,10 @@
 	| CITY  | varchar(20) | YES  |     | NULL    |       |
 	+-------+-------------+------+-----+---------+-------+
 
+<div style="page-break-after: always;"></div>
+
 #### QUERY:-
-	A DDL command  to create a table BORROW with LOANNO <varchar>, CNAME <varchar>, BNAME <varchar>, AMOUNT <NUMERIC>
+`A DDL command  to create a table BORROW with LOANNO <varchar>, CNAME <varchar>, BNAME <varchar>, AMOUNT <NUMERIC>`
 #### COMMAND:-
 	create table BORROW(
 	    -> LOANNO VARCHAR(20),
@@ -73,11 +79,15 @@
 	| AMOUNT | decimal(8,2) | YES  |     | NULL    |       |
 	+--------+--------------+------+-----+---------+-------+
 
+
 ### Alter Commands
 #### QUERY:-
 	A DDL command  to alter CUSTOMERS table to add Rating<int> column
 #### COMMAND:-
 	ALTER TABLE CUSTOMERS ADD Rating int(5);
+
+<div style="page-break-after: always;"></div>
+
 #### OUTPUT:-
 	+--------+-------------+------+-----+---------+-------+
 	| Field  | Type        | Null | Key | Default | Extra |
@@ -99,6 +109,7 @@
 	| CITY  | varchar(20) | YES  |     | NULL    |       |
 	+-------+-------------+------+-----+---------+-------+
 
+
 ### Drop Commands
 #### QUERY:-
 	A DDL command  to create table DUMMY with DNAME <int>, DNO <int>
@@ -106,6 +117,9 @@
 	CREATE TABLE DUMMY(
 	    -> DNAME int,
 	    -> DNO int);
+        
+<div style="page-break-after: always;"></div>
+
 #### OUTPUT:-
 	+-------+---------+------+-----+---------+-------+
 	| Field | Type    | Null | Key | Default | Extra |
@@ -140,10 +154,8 @@
 	TRUNCATE TABLE DUMMY;
 #### OUTPUT:-
 	Empty set (0.000 sec)
-	
-
-***************************************************************************************************
-
+    
+<div style="page-break-after: always;"></div>
 
 <h1 align="center"> Experiment - 3 </h1>
 
@@ -152,9 +164,9 @@
 
 ## <u> Queries :-</u>
 #### QUERY:-
-	A DDL command  to create a table SCIENTISTS with SCIENTIST_ID <int>, SCIENTIST_NAME <varchar>
+`A DDL command  to create a table SCIENTISTS with SCIENTIST_ID <int>, SCIENTIST_NAME <varchar>`
 #### COMMAND:-
-	CREATE TABLE SCIENTISTS(SCIENTIST_ID INT PRIMARY KEY, SCIENTIST_NAME varchar(30));
+`CREATE TABLE SCIENTISTS(SCIENTIST_ID INT PRIMARY KEY, SCIENTIST_NAME varchar(30));`
 #### OUTPUT:-
 	+----------------+-------------+------+-----+---------+-------+
 	| Field          | Type        | Null | Key | Default | Extra |
@@ -164,9 +176,12 @@
 	+----------------+-------------+------+-----+---------+-------+
 
 #### QUERY:-
-	A DDL command  to create a table EXPT with SNO <int>, EXPT_NAME <varchar>, EXPT_DATE <date> (not null), WORKERS_NO <int> (check(WORKERS_NO < 40)), EXPT_ID <varchar> (primary key), SCIENTIST_ID <int> (foreign key to SCIENTISTS(SCIENTIST_ID))
+`A DDL command  to create a table EXPT with SNO <int>, EXPT_NAME <varchar>, EXPT_DATE <date> (not null), WORKERS_NO <int> (check(WORKERS_NO < 40)), EXPT_ID <varchar> (primary key), SCIENTIST_ID <int> (foreign key to SCIENTISTS(SCIENTIST_ID))`
+
+<div style="page-break-after: always;"></div>
+
 #### COMMAND:-
-	CREATE TABLE EXPT( SNO int, EXPT_NAME varchar(20), EXPT_DATE date not null, WORKERS_NO int check(WORKERS_NO < 40), EXPT_ID varchar(20) primary key,SCIENTIST_ID int, foreign key(SCIENTIST_ID) references SCIENTISTS(SCIENTIST_ID));
+`CREATE TABLE EXPT( SNO int, EXPT_NAME varchar(20), EXPT_DATE date not null, WORKERS_NO int check(WORKERS_NO < 40), EXPT_ID varchar(20) primary key,SCIENTIST_ID int, foreign key(SCIENTIST_ID) references SCIENTISTS(SCIENTIST_ID));`
 #### OUTPUT:-
 	+--------------+-------------+------+-----+---------+-------+
 	| Field        | Type        | Null | Key | Default | Extra |
