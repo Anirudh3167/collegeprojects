@@ -1,5 +1,6 @@
 
-# Experiment - 2 :-
+<h1 align="center"> Experiment - 2 </h1>
+
 ## <u>Aim :-</u>
 <b><i> Experiments based on commands - CREATE , ALTER , DROP , TRUNCATE </i></b>
 
@@ -139,8 +140,13 @@
 	TRUNCATE TABLE DUMMY;
 #### OUTPUT:-
 	Empty set (0.000 sec)
+	
 
-# Experiment - 3
+***************************************************************************************************
+
+
+<h1 align="center"> Experiment - 3 </h1>
+
 ## <u> Aim :-</u>
 <b><i> Apply the integrity constraints like Primary Key, Foreign Key, Check, Not Null to the tables</i></b>
 
